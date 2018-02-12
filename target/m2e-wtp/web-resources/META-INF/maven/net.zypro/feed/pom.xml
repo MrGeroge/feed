@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.zypro</groupId>
+	<artifactId>feed</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>feed</name>
+	<description>Server for Feed</description>
+	<!-- 繼承spring-boot-starter-parent提供spring 常規的默認依賴 -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.1.9.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<dependencies>
+	<!-- 使用阿里雲存儲的依賴 -->
+		<dependency>
+			<groupId>com.aliyun.openservices</groupId>
+			<artifactId>aliyun-openservices</artifactId>
+			<version>1.0.10</version>
+		</dependency>
+		<!--提供aop功能的支持  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<!-- 提供jpa的支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!-- 提供web的支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!--提供tomcat支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- 提供junit test支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- 允許使用mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.34</version>
+		</dependency> 
+		<dependency>
+	        <groupId>org.json</groupId>
+	        <artifactId>json</artifactId>
+	        <version>20090211</version>
+        </dependency>
+        <dependency>
+	        <groupId>org.jsoup</groupId>
+	        <artifactId>jsoup</artifactId>
+	        <version>1.8.1</version>
+        </dependency>
+        <dependency>  
+            <groupId>redis.clients</groupId>  
+            <artifactId>jedis</artifactId>  
+            <version>2.0.0</version>  
+            <type>jar</type>  
+            <scope>compile</scope>  
+        </dependency>
+        <dependency>
+	        <groupId>joda-time</groupId>
+	        <artifactId>joda-time</artifactId>
+	        <version>2.7</version>
+        </dependency>
+        <dependency>
+	        <groupId>org.codehaus.jackson</groupId>
+	        <artifactId>jackson-core-asl</artifactId>
+	        <version>1.9.13</version>
+        </dependency>
+        <dependency>
+	        <groupId>org.codehaus.jackson</groupId>
+	        <artifactId>jackson-mapper-asl</artifactId>
+	        <version>1.9.13</version>
+        </dependency>
+        </dependencies>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<start-class>net.zypro.feed.Application</start-class>
+		<java.version>1.6</java.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
